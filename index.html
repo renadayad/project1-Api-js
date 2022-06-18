@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Meal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+  
+  <nav class="navbar bg-light" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="justcook.jpeg" alt="" width="300" height="200" class="d-inline-block align-text-top">
+      </a>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class = "container">
+    <div class = "meal-wrapper">
+      <div class = "meal-search">
+        <h2 class = "title" style="color:#5008d6;">Search for ingredients</h2>
+       
+
+        <div class = "d-flex">
+          <input type = "text" class = "search-control"  id = "search-input" placeholder="Enter an ingredient">
+          <button type = "submit" class = "search-btn btn" id = "search-btn" value="search" > 
+            <i class = "fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class = "meal-result">
+        <h2 class = "title"></h2>
+        <div id= "meal">
+        </div>
+      </div>
+
+
+      <div class = "meal-details">
+        <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">
+          <i class = "fas fa-times"></i>
+        </button>
+
+        <div class = "meal-details-content">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+var visits=localStorage.getItem("visits");
+if(visits===null){
+  visits=1
+}
+
+else{
+  visits++;
+}
+
+localStorage.setItem("visits",visits)
+
+
+var announcement={"mwssage":"Our item successfully saves!"};
+localStorage.setItem("announcement",JSON.stringify(announcement));
+//JSON.parse(localStorage.setItem("announcement"));
+</script>
+  <script src = "script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
